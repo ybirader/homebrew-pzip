@@ -11,7 +11,7 @@ class Pzip < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/ybirader/pzip/releases/download/v0.1.1/pzip_Darwin_x86_64.tar.gz"
-      sha256 "0daa192809cb77305f23156126919032a36abe252023b3ea881e68231038edfb"
+      sha256 "cb4a66d4de45ba74105a5e1f9f55d978588203e43b7246620a23405fd206f179"
 
       def install
         bin.install "pzip"
@@ -19,7 +19,7 @@ class Pzip < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/ybirader/pzip/releases/download/v0.1.1/pzip_Darwin_arm64.tar.gz"
-      sha256 "fdf883ddb98f11dc261f894d972ec3878c062c68fe2ec3f4127bd2145b0863bb"
+      sha256 "de94ac5e3f18311b7715ae943a3e474a6215feb313f32127a3ec39baae814fe7"
 
       def install
         bin.install "pzip"
@@ -28,17 +28,17 @@ class Pzip < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ybirader/pzip/releases/download/v0.1.1/pzip_Linux_arm64.tar.gz"
-      sha256 "47655773db5f1d8c7dc199f5d83cf6de01487237e857f22ac12eb54f8b0ba493"
+    if Hardware::CPU.intel?
+      url "https://github.com/ybirader/pzip/releases/download/v0.1.1/pzip_Linux_x86_64.tar.gz"
+      sha256 "8a325acb4817ed47b8033c6eb24b088fa07067720950018d18a3b6c085529c11"
 
       def install
         bin.install "pzip"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/ybirader/pzip/releases/download/v0.1.1/pzip_Linux_x86_64.tar.gz"
-      sha256 "c5756caf27b7a574543f7eaa2226567c04be1d12d230866b34addea0c89be378"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ybirader/pzip/releases/download/v0.1.1/pzip_Linux_arm64.tar.gz"
+      sha256 "a35613b65757b40bd68e4915ed48e745dc50e73bd58c18cd0041d7010461e4f7"
 
       def install
         bin.install "pzip"
