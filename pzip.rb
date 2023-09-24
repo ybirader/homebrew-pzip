@@ -5,21 +5,21 @@
 class Pzip < Formula
   desc "pzip, short for parallel-zip, is a blazing fast concurrent zip archiver."
   homepage "https://github.com/ybirader/pzip"
-  version "0.1.1"
+  version "0.2.0"
   license "Apache 2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ybirader/pzip/releases/download/v0.1.1/pzip_Darwin_x86_64.tar.gz"
-      sha256 "3ee816cda0e7ed8cb5a4f2ff814ff442503aa1a25291d8e81d64aa82bf4042d4"
+      url "https://github.com/ybirader/pzip/releases/download/v0.2.0/pzip_Darwin_x86_64.tar.gz"
+      sha256 "4c628b0520b1fbf9029d43019f7202b0272246cd6d59f31644e7e7d5f551e75f"
 
       def install
         bin.install "pzip"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ybirader/pzip/releases/download/v0.1.1/pzip_Darwin_arm64.tar.gz"
-      sha256 "20adb00d0c7acff4abb465a0c866d7c6c18287b51f8d87a6db27d79924e28f8a"
+      url "https://github.com/ybirader/pzip/releases/download/v0.2.0/pzip_Darwin_arm64.tar.gz"
+      sha256 "4713de75736f45978395336b6b01d0d29b321cf05526102b00b6339a6ad8ddfd"
 
       def install
         bin.install "pzip"
@@ -29,16 +29,16 @@ class Pzip < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ybirader/pzip/releases/download/v0.1.1/pzip_Linux_arm64.tar.gz"
-      sha256 "9d8c3ac1397b1d923c4f9dd3d98a053d3e9a69ae0a35f75ef256a4a8e7896127"
+      url "https://github.com/ybirader/pzip/releases/download/v0.2.0/pzip_Linux_arm64.tar.gz"
+      sha256 "f91e806d963b5f9ce474519205474e79129d17f6d6aff1654bd88797fd09b482"
 
       def install
         bin.install "pzip"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ybirader/pzip/releases/download/v0.1.1/pzip_Linux_x86_64.tar.gz"
-      sha256 "b44ed5fbe9c6cb6198c51c30c6da3de8658c6be38f7d24bfae58dc28746d5850"
+      url "https://github.com/ybirader/pzip/releases/download/v0.2.0/pzip_Linux_x86_64.tar.gz"
+      sha256 "866673c3191c350819a30f877cddef94473336b46f0164621d0c1ab95880e9b9"
 
       def install
         bin.install "pzip"
