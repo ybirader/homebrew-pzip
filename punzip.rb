@@ -5,21 +5,21 @@
 class Punzip < Formula
   desc "punzip, short for parallel-unzip, is a blazing fast concurrent zip extractor."
   homepage "https://github.com/ybirader/pzip"
-  version "0.2.1"
+  version "0.2.2"
   license "Apache 2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/ybirader/pzip/releases/download/v0.2.1/punzip_Darwin_x86_64.tar.gz"
-      sha256 "d9ef56cd70c3d3a2878db593c31b9a6d1959b8afd00b485df112ca3cfdf77bc2"
+    if Hardware::CPU.arm?
+      url "https://github.com/ybirader/pzip/releases/download/v0.2.2/punzip_Darwin_arm64.tar.gz"
+      sha256 "9091355afb339a135ad677b87aa1818040d4731415776a679ea8bb11675017b5"
 
       def install
         bin.install "punzip"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/ybirader/pzip/releases/download/v0.2.1/punzip_Darwin_arm64.tar.gz"
-      sha256 "cb5dea42649cfa70b6be371e23a3cbf2c66d2668d86757c12d65051e31cae1fa"
+    if Hardware::CPU.intel?
+      url "https://github.com/ybirader/pzip/releases/download/v0.2.2/punzip_Darwin_x86_64.tar.gz"
+      sha256 "dd2f3e278c5e26e5d008e2d5b5bfecb0753996a17cc28ad4d46513402d11ad7f"
 
       def install
         bin.install "punzip"
@@ -28,17 +28,17 @@ class Punzip < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/ybirader/pzip/releases/download/v0.2.1/punzip_Linux_x86_64.tar.gz"
-      sha256 "f1342e53c8cb5d322bb61de9c3d6bcf0f1388e926454bf65339eb630c9de4c47"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ybirader/pzip/releases/download/v0.2.2/punzip_Linux_arm64.tar.gz"
+      sha256 "693ed256055f5af43b9b156ceadd9a9ac547608057cd9b81a84823d9ede93431"
 
       def install
         bin.install "punzip"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ybirader/pzip/releases/download/v0.2.1/punzip_Linux_arm64.tar.gz"
-      sha256 "604e4cb6e65259587185a369057c9fbec093f9df474016140c3b6aada17f48fe"
+    if Hardware::CPU.intel?
+      url "https://github.com/ybirader/pzip/releases/download/v0.2.2/punzip_Linux_x86_64.tar.gz"
+      sha256 "02ca6fe51e8301d60d345cf1bfaa475f4b86830d15a4335250f0766a78ff464a"
 
       def install
         bin.install "punzip"
