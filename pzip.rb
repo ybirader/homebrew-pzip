@@ -5,21 +5,21 @@
 class Pzip < Formula
   desc "pzip, short for parallel-zip, is a blazing fast concurrent zip archiver."
   homepage "https://github.com/ybirader/pzip"
-  version "0.2.1"
+  version "0.2.2"
   license "Apache 2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/ybirader/pzip/releases/download/v0.2.1/pzip_Darwin_x86_64.tar.gz"
-      sha256 "423a3ca5a365b364e28d65566e81e4043e986ca62eedb1978e727b2452b9b928"
+    if Hardware::CPU.arm?
+      url "https://github.com/ybirader/pzip/releases/download/v0.2.2/pzip_Darwin_arm64.tar.gz"
+      sha256 "5088120f101ec46dd904dae4e42ecaf5ff9998ed5761c10a8d40754eaf424a7e"
 
       def install
         bin.install "pzip"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/ybirader/pzip/releases/download/v0.2.1/pzip_Darwin_arm64.tar.gz"
-      sha256 "403ccc890c90f2c5702f3f72e0883dbb2bc3f2cb553ede0bf39c48e757cd20c7"
+    if Hardware::CPU.intel?
+      url "https://github.com/ybirader/pzip/releases/download/v0.2.2/pzip_Darwin_x86_64.tar.gz"
+      sha256 "a4d98784c8016a22df4e5762f05abcb37b45cd67013132a9665a283d4431bd0a"
 
       def install
         bin.install "pzip"
@@ -28,17 +28,17 @@ class Pzip < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/ybirader/pzip/releases/download/v0.2.1/pzip_Linux_x86_64.tar.gz"
-      sha256 "e270e6c7dc99a2b0f9757ec31410b491fe4d77cd61caf5d27d3e6ffaa9679bea"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ybirader/pzip/releases/download/v0.2.2/pzip_Linux_arm64.tar.gz"
+      sha256 "baecccdba853a8236299426a4313058b65000604035d07c8560afe95798506e6"
 
       def install
         bin.install "pzip"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ybirader/pzip/releases/download/v0.2.1/pzip_Linux_arm64.tar.gz"
-      sha256 "6fe609d8fa54635813272cfed12da62cad57d1376e47c1ca857eaf18c0f55203"
+    if Hardware::CPU.intel?
+      url "https://github.com/ybirader/pzip/releases/download/v0.2.2/pzip_Linux_x86_64.tar.gz"
+      sha256 "2e55674b19fd9062acec6f8cfb1a75a90b544bcc91a0524ab60c8c88de107b42"
 
       def install
         bin.install "pzip"
